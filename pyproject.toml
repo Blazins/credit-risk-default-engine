@@ -1,0 +1,24 @@
+[project]
+name = "credit-risk"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.5",
+    "matplotlib>=3.11.2",
+    "pandas>=3.1.0",
+    "polars>=2.1.0",
+    "scikit-learn>=1.9.1",
+    "seaborn>=0.13.2",
+    "shap>=0.51.0",
+    "xgboost>=3.2.0",
+]
+
+[project.scripts]
+credit-risk = "credit_risk:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
