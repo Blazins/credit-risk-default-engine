@@ -72,7 +72,7 @@ When we group our test borrowers into 10 risk buckets (from Decile 0 as the safe
 ### Model Insights & Risk
 *(Generated from our notebook pipeline in `reports/model_insights_visualization.png`)*
 
-![Model Insights and Risk Lift](../reports/model_insights_visualization.png)
+![Model Insights and Risk Lift](reports/model_insights_visualization.png)
 
 *Above: The left chart highlights the top underwriting drivers steering our model, while the right chart demonstrates the clean, upward risk lift across our decile buckets.*
 
@@ -86,7 +86,7 @@ By converting our risk deciles into executable lending policies, we simulated th
 | **Balanced (Block Top 30%)** | 8,215 | $86.3M | $42.3M | **+$44.0M** |
 | **Aggressive (Block Top 50%)** | 11,779 | $123.7M | $78.0M | **+$45.7M** |
 
-![Portfolio Policy Simulation](../reports/portfolio_policy_simulation.png)
+![Portfolio Policy Simulation](reports/portfolio_policy_simulation.png)
 
 *Above: Net financial benefit across baseline, conservative, balanced, and aggressive approval policies.*
 
