@@ -118,3 +118,4 @@ Applicants who rapidly open multiple new credit or installment accounts within a
 
 ### 3. Asset Stability
 Borrowers with established mortgage histories (`mort_acc` ≥ 2) and homeownership exhibit greater financial resilience and lower default rates compared to unsecured renters carrying identical debt profiles.
+
