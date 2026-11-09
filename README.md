@@ -4,7 +4,7 @@ A portfolio assessment project designed to help financial institutions make smar
 ---
 
 ##  Project Intention & Business Impact
-When financial institutions issue loans, predicting who will pay them back and who might default is critical for portfolio health and profitability. This project builds a reliable, production-grade credit scoring model that helps lenders:
+When financial institutions issue loans, predicting who will pay them back and who might default is critical for portfolio health and profitability. This project builds a reliable, credit scoring model that helps lenders:
 * **Profile customer risk** accurately before approving a loan.
 * **Set data-driven pricing and limits** based on real financial behavior.
 * **Prevent financial losses** by catching high-risk applicant warning signs early.
@@ -20,10 +20,10 @@ Instead of looking at everything, we focus strictly on **time-zero underwriting 
 * **Credit Velocity (Recent Openings):** Whether the borrower has suddenly rushed to open multiple new credit lines in the past 6 months.
 * **Loan Structure (`term`, `int_rate`, `grade`):** The pricing and risk tier assigned to the loan.
 
-**Note**: We strictly audited the data to remove "cheating" variables data points like post-issue FICO updates, collection recovery fees, and debt settlement flags.*
-*What are they?* These are variables recorded after the loan has already been issued or gone bad.
-*Why do they cheat?* Including them is like taking an exam with the answer key printed on the back. A variable like debt_settlement_flag instantly tells the model: "If this is 1, the customer defaulted."
-*The Business Impact*: A model trained on cheating variables looks 99% accurate in testing, but completely collapses in the real world when evaluating new applicants today. Stripping them out ensures our model predicts risk honestly using only time-zero underwriting facts available the moment a customer applies.
+**Note**: The data was audited to remove "cheating" variables data points like post-issue FICO updates, collection recovery fees, and debt settlement flags that were only recorded after the loan has already been issued or gone bad.
+- A variable like debt_settlement_flag instantly tells the model: "If this is 1, the customer defaulted."
+- A model trained on cheating variables looks 99% accurate in testing, but completely collapses in the real world when evaluating new applicants today.
+- Stripping them out ensures our model predicts risk honestly using only time-zero underwriting facts available the moment a customer applies.
 
 ---
 ## Profiling the Extremes: Decile 0 vs. Decile 9
@@ -77,7 +77,7 @@ When we group our test borrowers into 10 risk buckets (from Decile 0 as the safe
 *Above: The left chart highlights the top underwriting drivers steering our model, while the right chart demonstrates the clean, upward risk lift across our decile buckets.*
 
 ## Portfolio Policy & Financial Impact
-By converting our risk deciles into executable lending policies, we simulated the exact P&L trade-offs between credit losses saved and interest revenue forfeited (assuming a $15,000 average loan size, 70% loss severity, and $3,900 interest margin):
+By converting our risk deciles into executable lending policies, we simulated the exact P&L trade-offs between credit losses saved and interest revenue forfeited (assuming a $15,000 average loan size, 70% loss severity, and $3,900 interest margin;~26% total lifetime yield on principal over a standard 3-year term, equivalent to a ~15.5%–16% annualized APR—highly aligned with retail and commercial business lending yields, e.g., 19% APR benchmarks.):
 
 | Approval Policy | Defaults Prevented | Credit Losses Saved | Revenue Forfeited | Net P&L Benefit |
 | :--- | :--- | :--- | :--- | :--- |
